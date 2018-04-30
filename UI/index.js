@@ -13,15 +13,21 @@ ipcRenderer.on("getPass",(pass)=>{
 $("#getBtn").onclick = ()=>{
    let address = `http://${$('#getIp').value}:4255`;
    var socket = io.connect(address);
-   ss(socket).emit('startStream');
-   ss(socket).on('startStream',(stream)=>{
-      console.log(stream);
+   
+   let rtc = new RTCPeerConnection();
+   rtc.createOffer().then(x=>{
+      rtc.setLocalDescription(x).then(()=>{
+         socket.emit("sdp",x);
+      });
+   });
+
+   socket.on("sdp",(x)=>{
+      rtc.setRemoteDescription(x);
+   });
+
+   rtc.onaddstream((stream)=>{
       $("#streamPlayer").src = window.URL.createObjectURL(stream);
    });
-   // $("#streamPlayer").src = window.URL.createObjectURL(stream);
-   socket.on("newStreamBlob",(blob)=>{
-      // return console.log(blob);
-      // $("#streamPlayer").src = window.URL.createObjectURL(new Blob([blob]));
-   });
+
 }
 
