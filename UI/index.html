@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Page Title</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+   <h1>openStream - Secure Screen Share</h1> <br>
+   <hr>
+   <div id="container">
+      <div id="send">
+         <h2>Send</h2>
+         Your friends can see your desktop by entering your public ip address 
+         in the recieve section of the app and this password : <span id="pass"></span>
+      </div>
+      
+      <div id="get">
+         <h2>Receive</h2>
+         <form id="getForm">
+            <input type="text" placeholder="Ip Address" id="getIp"/>
+            <input type="text" placeholder="password" id="getPass"/>
+         </form>
+         <button id="getBtn">Stream</button>
+      </div>
+      <video id="streamPlayer"></video>
+   </div>
+
+</body>
+<script src="socket.io-client.js"></script>
+<script src="index.js"></script>
+</html>

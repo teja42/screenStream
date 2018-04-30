@@ -1,0 +1,42 @@
+*{
+   font-weight: 400;
+   margin:0;
+   padding:0;
+}
+
+input{
+   padding: 5px;
+}
+
+button{
+   padding: 7px;
+   margin: 1px;
+   cursor: pointer;
+   background-color: rgb(255, 0, 149);
+   color: white;
+   border: 0;
+   outline: none;
+   font-weight: 500;
+   font-size: 16px;
+}
+
+#container>*{
+   margin: 10px;
+}
+
+#get{
+   width: 100%;
+   height: 98vh;
+}
+
+h1{
+   color: rgb(234, 0, 255);
+}
+
+h2{
+   color: rgb(37, 95, 255);
+}
+
+#send{
+   width: 80%;
+}
