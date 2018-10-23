@@ -1,4 +1,4 @@
-# rigelStream
+# ScreenStream
 A peer to peer, cross platfrom screen sharing tool.
 
 It uses webRTC to share screen and uses node.js server for signalling. Really secure and private since there is no middleman
